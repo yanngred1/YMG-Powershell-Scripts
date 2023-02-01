@@ -1,5 +1,3 @@
-Import-Module ActiveDirectory
-
 # Replace <CSV File Path> with the path to the CSV file containing the user information
 $users = Import-Csv "<CSV File Path>"
 
