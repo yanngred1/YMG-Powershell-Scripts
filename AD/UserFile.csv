@@ -1,4 +1,4 @@
-Username,Password,FirstName,LastName,Group
-user1,P@ssword1,John,Doe,Group1
-user2,P@ssword2,Jane,Doe,Group2
-user3,P@ssword3,Jim,Smith,Group1
+Username,Password,FirstName,LastName,Group1,Group2,Group3
+user1,P@ssword1,John,Doe,Group1,Group2,Group3
+user2,P@ssword2,Jane,Doe,Group2,Group1,Group3
+user3,P@ssword3,Jim,Smith,Group1,Group3,Group2
