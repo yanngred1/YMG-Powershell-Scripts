@@ -1,0 +1,20 @@
+$computerSystem = Get-CimInstance CIM_ComputerSystem
+$computerBIOS   = Get-CimInstance CIM_BIOSElement
+$computerOS     = Get-CimInstance CIM_OperatingSystem
+$computerCPU    = Get-CimInstance CIM_Processor
+$computerGPU    = Get-CimInstance Win32_VideoController  # Henter GPU data
+$computerHDD    = Get-CimInstance Win32_LogicalDisk -Filter "DeviceID = 'C:'"
+
+Write-Host "`n--- System Information for: $($computerSystem.Name) ---" -BackgroundColor DarkCyan -ForegroundColor White
+
+"Manufacturer:    $($computerSystem.Manufacturer)"
+"Model:           $($computerSystem.Model)"
+"Serial Number:   $($computerBIOS.SerialNumber)"
+"CPU:             $($computerCPU.Name)"
+"GPU (Grafik):    $($computerGPU.Name)" # Viser navnet på dit grafikkort
+"RAM:             $([Math]::Round($computerSystem.TotalPhysicalMemory / 1GB, 2)) GB"
+"HDD Capacity:    $([Math]::Round($computerHDD.Size / 1GB, 2)) GB"
+"HDD Space:       $([Math]::Round($computerHDD.FreeSpace / 1GB, 2)) GB Free"
+"OS:              $($computerOS.Caption), $($computerOS.OSArchitecture)"
+
+Write-Host "--------------------------------------------------`n"
